@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "410835793501",
+    "firebase_url": "https://ighatha-ff0e9.firebaseio.com",
+    "project_id": "ighatha-ff0e9",
+    "storage_bucket": "ighatha-ff0e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410835793501:android:555e70eac9497a81013fb4",
+        "android_client_info": {
+          "package_name": "com.ighatha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410835793501-9c3uchn0ni3cgj0h7pl3ink987cubkqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSt6My1ygDjjnufzpYLqAifjgwZnNAFfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410835793501-9c3uchn0ni3cgj0h7pl3ink987cubkqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
