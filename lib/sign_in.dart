@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ighatha/ForgetScreen.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -40,6 +41,24 @@ class _SignInState extends State<SignIn> {
               );
             });
       }
+      if (err.code == 'ERROR_USER_NOT_FOUND') {
+        showCupertinoDialog(
+            context: context,
+            builder: (context) {
+              return CupertinoAlertDialog(
+                title: Text(
+                    'this email not registered  !! '),
+                actions: <Widget>[
+                  CupertinoDialogAction(
+                    child: Text('OK'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              );
+            });
+      }
     });
   }
   @override
@@ -66,7 +85,7 @@ class _SignInState extends State<SignIn> {
               color: Colors.white,
             ),
           ),
-          hintText: "entet email ",
+          hintText: "enter email ",
           hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
           ),
         ),
@@ -99,7 +118,26 @@ class _SignInState extends State<SignIn> {
           fontSize: 22.4,
         ),
       ),
+      //forget password
       SizedBox(height: 20.0,),
+      Padding(padding: EdgeInsets.only(right: 20),
+      child: Container(
+        width: double.infinity,
+       child: InkWell(
+         onTap: (){
+           Navigator.pushReplacement(context,
+               MaterialPageRoute(builder:(BuildContext context)=> ForgetScreen()));
+         },
+         child:Text(
+           "Forger password  ?  ",
+           style: TextStyle(
+             color: Colors.white
+           ),
+           textAlign: TextAlign.right,
+         ),
+       ),
+      ),
+      ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -131,18 +169,24 @@ class _SignInState extends State<SignIn> {
     ),
         ],
       ),
-      SizedBox(height: 5.0,),
 
-      Text(
-        "Forger password  ?  ",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-          decoration: TextDecoration.underline,
+      SizedBox(height: 5.0,),
+      /*
+      Expanded(
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child:Text(
+            "Forger password  ?  ",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.underline,
+            ),
+          ),
         ),
       ),
-      SizedBox(height: 50.0,),
+      */
     ],),
     );
   }
