@@ -82,7 +82,7 @@ class HomeSinginW extends StatelessWidget {
     goToSignIn();
     },
     child: Text(
-          "AREADy a menber  ?  Sign in ",
+          "AREADy a member  ?  Sign in ",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
