@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'HomePage.dart';
-
+import 'ForgetScreen.dart';
 class Login extends StatefulWidget {
 
   final Function cancelBackToHome;
@@ -18,15 +18,21 @@ class _LoginState extends State<Login> {
   bool _termsAgreed = false ;
   bool saveAttempted = false;
   final formKey = GlobalKey<FormState>();
-
+  signOut() {
+    FirebaseAuth.instance.signOut();
+  }
   void _createUser({String email, String pw}) {
     _auth
         .createUserWithEmailAndPassword(email: email, password: pw).then((authResult)
     {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) =>HomePage()),
-      );
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return
+          Container(
+          color: Colors.yellow,
+          child: Text('Welcome ${authResult.user.email}'),
+        );
+      }));
+
     }).catchError((err){
       print(err.code);
       if (err.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
