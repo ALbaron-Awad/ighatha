@@ -24,41 +24,79 @@ class _SignInState extends State<SignIn> {
     }).catchError((err){
       print(err.code);
       if (err.code == 'ERROR_WRONG_PASSWORD') {
-        showCupertinoDialog(
-            context: context,
-            builder: (context) {
-              return CupertinoAlertDialog(
-                title: Text(
-                    'wrong password !! '),
-                actions: <Widget>[
-                  CupertinoDialogAction(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )
-                ],
-              );
-            });
+        showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Password '),
+            content: Text(
+                'Wrong Password !'),
+            contentTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 18.4,
+              fontWeight: FontWeight.w600,
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true)
+                      .pop(); // dismisses only the dialog and returns nothing
+                },
+                child: new Text('Ok'),
+              ),
+            ],
+          ),
+        );
       }
-      if (err.code == 'ERROR_USER_NOT_FOUND') {
-        showCupertinoDialog(
+
+      if (err.code== 'ERROR_USER_NOT_FOUND') {
+         showDialog(
             context: context,
-            builder: (context) {
-              return CupertinoAlertDialog(
-                title: Text(
-                    'this email not registered  !! '),
-                actions: <Widget>[
-                  CupertinoDialogAction(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )
-                ],
-              );
-            });
+            builder: (context) => new AlertDialog(
+          title: new Text('Email'),
+          content: Text(
+              'this email not registered !'),
+          contentTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 18.4,
+            fontWeight: FontWeight.w600,
+          ),
+          actions: <Widget>[
+            new FlatButton(
+              onPressed: () {
+                Navigator.of(context, rootNavigator: true)
+                    .pop(); // dismisses only the dialog and returns nothing
+              },
+              child: new Text('Ok'),
+            ),
+          ],
+        ),
+      );
       }
+      if (err.code== 'ERROR_INVALID_EMAIL') {
+        showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Email'),
+            content: Text(
+                'This is not a valid email !'),
+            contentTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 18.4,
+              fontWeight: FontWeight.w600,
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true)
+                      .pop(); // dismisses only the dialog and returns nothing
+                },
+                child: new Text('Ok'),
+              ),
+            ],
+          ),
+        );
+      }
+
     });
   }
   @override
@@ -67,8 +105,8 @@ class _SignInState extends State<SignIn> {
       Text(
         "Sign In",
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 23.4,
+          color: Colors.black,
+          fontSize: 22.4,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -82,16 +120,17 @@ class _SignInState extends State<SignIn> {
         decoration: InputDecoration(
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          hintText: "enter email ",
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
+          hintText: "Enter email ",
+          hintStyle: TextStyle(color: Colors.black45,
+            fontSize: 20,
           ),
         ),
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 22.4,
+          color: Colors.blue,
+          fontSize: 25.4,
         ),
       ),
       SizedBox(height: 20.0,),
@@ -105,17 +144,17 @@ class _SignInState extends State<SignIn> {
         decoration: InputDecoration(
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
-          hintText: "entet password ",
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
-
+          hintText: "Enter password ",
+          hintStyle: TextStyle(color: Colors.black45,
+            fontSize: 20,
           ),
         ),
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 22.4,
+          color: Colors.blue,
+          fontSize: 25.4,
         ),
       ),
       //forget password
@@ -129,9 +168,10 @@ class _SignInState extends State<SignIn> {
                MaterialPageRoute(builder:(BuildContext context)=> ForgetScreen()));
          },
          child:Text(
-           "Forger password  ?  ",
+           "Forget password ?  ",
            style: TextStyle(
-             color: Colors.white
+             color: Colors.black45,
+             fontSize: 14.4,
            ),
            textAlign: TextAlign.right,
          ),
@@ -158,7 +198,7 @@ class _SignInState extends State<SignIn> {
               borderRadius: BorderRadius.circular(30.0
               ),
             ),
-            child: Text("Log in  ",
+            child: Text(" Log in ",
               style: TextStyle(
                 color: Colors.blue,
                 fontSize: 23.5,

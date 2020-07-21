@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeSinginW extends StatelessWidget {
+class HomeSingINUP extends StatelessWidget {
   final Function goToSignUp;
   final Function goToSignIn;
   final Function goTovernum;
 
-  HomeSinginW({this.goToSignUp,this.goToSignIn,this.goTovernum});
+  /*
+  goTovernum
+    is for quick report .
+    will be active after adding OTP.
+   */
+
+  HomeSingINUP({this.goToSignUp,this.goToSignIn,this.goTovernum});
 
 
   @override
@@ -27,18 +33,18 @@ class HomeSinginW extends StatelessWidget {
             horizontal: 20.0,
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.green,
             borderRadius: BorderRadius.circular(30.0),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "sign uP ",
+                "Sign up",
                 style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 20.4,
+                  color: Color.fromRGBO(255, 255, 255, 1.0),
                   fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
                 ),
               ),
             ],
@@ -46,7 +52,7 @@ class HomeSinginW extends StatelessWidget {
         ),
         ),
         SizedBox(
-          height: 40.0,
+          height: 35.0,
         ),
         InkWell(onTap: (){
         goTovernum();
@@ -57,18 +63,18 @@ class HomeSinginW extends StatelessWidget {
             horizontal: 20.0,
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.green,
             borderRadius: BorderRadius.circular(30.0),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "ASk for help !",
+                "Ask for help!",
                 style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 20.4,
+                  color: Color.fromRGBO(255, 255, 255, 1.0),
                   fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
                 ),
               ),
             ],
@@ -76,15 +82,15 @@ class HomeSinginW extends StatelessWidget {
         ),
         ),
         SizedBox(
-          height: 20.0,
+          height: 30.0,
         ),
     InkWell(onTap: (){
     goToSignIn();
     },
     child: Text(
-          "AREADy a member  ?  Sign in ",
+          "Already a member?  Sign in",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
             decoration: TextDecoration.underline,
@@ -93,7 +99,6 @@ class HomeSinginW extends StatelessWidget {
     ),
       ],
     )
-
       );
   }
 }

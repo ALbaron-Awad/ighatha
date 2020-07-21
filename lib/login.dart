@@ -18,9 +18,11 @@ class _LoginState extends State<Login> {
   bool _termsAgreed = false ;
   bool saveAttempted = false;
   final formKey = GlobalKey<FormState>();
+
   signOut() {
     FirebaseAuth.instance.signOut();
   }
+
   void _createUser({String email, String pw}) {
     _auth
         .createUserWithEmailAndPassword(email: email, password: pw).then((authResult)
@@ -36,26 +38,32 @@ class _LoginState extends State<Login> {
     }).catchError((err){
       print(err.code);
       if (err.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
-        showCupertinoDialog(
-            context: context,
-            builder: (context) {
-              return CupertinoAlertDialog(
-                title: Text(
-                    'This email already has an account associated with it'),
-                actions: <Widget>[
-                  CupertinoDialogAction(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )
-                ],
-              );
-            });
+        showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Email'),
+            content: Text(
+                'This email already has an account associated with it'),
+            contentTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 18.4,
+              fontWeight: FontWeight.w600,
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true)
+                      .pop(); // dismisses only the dialog and returns nothing
+                },
+                child: new Text('Ok'),
+              ),
+            ],
+          ),
+        );
+
       }
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -64,14 +72,14 @@ class _LoginState extends State<Login> {
         child: Column(
           children: <Widget>[
             Text(
-              "crate login ",
+              "Create an account!",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 23.4,
+                color: Colors.black,
+                fontSize: 20.4,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 25.0,),
             //email
             TextFormField(autovalidate: saveAttempted,
               onChanged: (textValue){
@@ -82,6 +90,9 @@ class _LoginState extends State<Login> {
               validator: (emailValue){
                 if(emailValue.isEmpty){
                   return" this filed is monitor";
+                }
+                if(emailValue== "ERROR_INVALID_EMAIL"){
+                  return"This is not a valid email";
                 }
                 String p = "[a-zA-Z0-9\+\.\_\%\-\+]{1,256}" +
                     "\\@" +
@@ -99,22 +110,22 @@ class _LoginState extends State<Login> {
                 return 'This is not a valid email';
               },
               decoration: InputDecoration(
-                errorStyle: TextStyle(
-                  color: Colors.white,
-                ),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
+                errorStyle: TextStyle(
+                  color: Colors.red,
+                ),
                 hintText: "Enter email ",
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
-
+                hintStyle: TextStyle(color: Colors.black45,
+                  fontSize: 20,
                 ),
               ),
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.4,
+                color: Colors.blue,
+                fontSize: 25.4,
               ),
             ),
             SizedBox(height: 20.0,),
@@ -136,22 +147,22 @@ class _LoginState extends State<Login> {
               },
               obscureText: true,
               decoration: InputDecoration(
-                errorStyle: TextStyle(
-                  color: Colors.white,
-                ),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
+                errorStyle: TextStyle(
+                  color: Colors.red,
+                ),
                 hintText: "Enter password ",
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
-
+                hintStyle: TextStyle(color: Colors.black45,
+                  fontSize: 20,
                 ),
               ),
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.4,
+                color: Colors.blue,
+                fontSize: 25.4,
               ),
             ),
             SizedBox(height: 20.0,),
@@ -176,22 +187,23 @@ class _LoginState extends State<Login> {
               },
               obscureText: true,
               decoration: InputDecoration(
-                errorStyle: TextStyle(
-                  color: Colors.white,
-                ),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
-                hintText: "Re- entet password ",
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.8)
+                errorStyle: TextStyle(
+                  color: Colors.red,
+                ),
+                hintText: "Re-enter password ",
+                hintStyle: TextStyle(color: Colors.black45,
+                  fontSize: 20,
                 ),
               ),
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.4,
-              ),
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 25.4,
+                )
             ),
             SizedBox(height: 20.0,),
 
@@ -203,9 +215,9 @@ class _LoginState extends State<Login> {
                   widget.cancelBackToHome();
                 },
                   child: Text(
-                    "Cnacel",
+                    "Cancel",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -232,7 +244,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
 
-                    child: Text("create acount ",
+                    child: Text("Create account",
                       style: TextStyle(
                         color: Colors.blue,
                         fontSize: 23.5,
