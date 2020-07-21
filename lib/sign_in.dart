@@ -9,6 +9,7 @@ class SignIn extends StatefulWidget {
   _SignInState createState() => _SignInState();
 }
 
+
 class _SignInState extends State<SignIn> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String email , password ;
