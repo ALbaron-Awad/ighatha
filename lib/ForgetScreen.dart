@@ -9,8 +9,6 @@ class ForgetScreen extends StatefulWidget {
     return _ForgetScreen();
   }}
 
-
-
 class _ForgetScreen  extends State<ForgetScreen>{
   String email;
   var _formKey = GlobalKey<FormState>();
@@ -18,14 +16,18 @@ class _ForgetScreen  extends State<ForgetScreen>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.blue,
-      appBar: AppBar(title: Text("Forget the password",
+      backgroundColor: Color.fromRGBO(235, 235, 235, 1.0),
+      appBar: AppBar(
+        title: Text("Forget the Password",
+
       style: TextStyle(
-        color: Colors.pink,
+        color: Colors.black,
         backgroundColor: Colors.white,
       ),
-      ),),
+      ),
+      ),
       body: Center(
+
         child: Padding(
           padding: EdgeInsets.only(top: 50 , left: 20 , right: 20),
 
@@ -34,15 +36,16 @@ class _ForgetScreen  extends State<ForgetScreen>{
 
         child:Column(
           children: <Widget>[
-            Text("check you eamil  ",
+            Text("Enter your email",
               style: TextStyle(
-                color: Colors.amber,
-                fontSize:  20 ,
+                color: Colors.black,
+                fontSize:  22 ,
               ),
             ),
+            SizedBox(height: 35.0,),
             Theme(
               data: ThemeData(
-                hintColor: Colors.blue
+                hintColor: Colors.black45
               ),
               child: Padding(padding:
               EdgeInsets.only(top: 30),
@@ -55,24 +58,24 @@ class _ForgetScreen  extends State<ForgetScreen>{
                   }
                   return null ;
                 },
-                style: TextStyle(color: Colors.red),
+                style: TextStyle(color: Colors.blue),
                 decoration:  InputDecoration(
                   labelText:  "Email",
                   border:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.black , width: 6.0),
                   ),
                   disabledBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.green),
                   ),
                   enabledBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.green),
                   ),
                   focusedBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.green),
                   ),
                 ),
               ),

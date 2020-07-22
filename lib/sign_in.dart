@@ -119,10 +119,8 @@ class _SignInState extends State<SignIn> {
           });
         },
         decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.green, width: 3.0),
           ),
           hintText: "Enter email ",
           hintStyle: TextStyle(color: Colors.black45,
@@ -143,10 +141,8 @@ class _SignInState extends State<SignIn> {
         },
         obscureText: true,
         decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.green, width: 3.0),
           ),
           hintText: "Enter password ",
           hintStyle: TextStyle(color: Colors.black45,
@@ -171,8 +167,8 @@ class _SignInState extends State<SignIn> {
          child:Text(
            "Forget password ?  ",
            style: TextStyle(
-             color: Colors.black45,
-             fontSize: 14.4,
+             color: Colors.black,
+             fontSize: 15.0,
            ),
            textAlign: TextAlign.right,
          ),

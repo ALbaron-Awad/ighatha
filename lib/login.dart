@@ -111,11 +111,10 @@ class _LoginState extends State<Login> {
                 return 'This is not a valid email';
               },
               decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                  ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green, width: 3.0),
                 ),
+
                 errorStyle: TextStyle(
                   color: Colors.red,
                 ),
@@ -125,7 +124,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               style: TextStyle(
-                color: Colors.blue,
+                color: Colors.black,
                 fontSize: 25.4,
               ),
             ),
@@ -147,11 +146,10 @@ class _LoginState extends State<Login> {
                 return null;
               },
               obscureText: true,
+
               decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                  ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green, width: 3.0),
                 ),
                 errorStyle: TextStyle(
                   color: Colors.red,
@@ -162,7 +160,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               style: TextStyle(
-                color: Colors.blue,
+                color: Colors.black,
                 fontSize: 25.4,
               ),
             ),
@@ -188,10 +186,8 @@ class _LoginState extends State<Login> {
               },
               obscureText: true,
               decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                  ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green, width: 3.0),
                 ),
                 errorStyle: TextStyle(
                   color: Colors.red,
@@ -202,7 +198,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.black,
                   fontSize: 25.4,
                 )
             ),
