@@ -72,14 +72,16 @@ class _ForgetScreen  extends State<ForgetScreen>{
                   enabledBorder:OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide(color: Colors.green),
-                  ),
-                  focusedBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.green),
-                  ),
+                  ),focusedBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
                 ),
               ),
               ),
+            ),
+            SizedBox(
+              height: 50,
             ),
             Padding(
               padding: EdgeInsets.only(left: 20 , right: 20),
@@ -93,18 +95,16 @@ class _ForgetScreen  extends State<ForgetScreen>{
                 shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
     ),
-    color: Color(0xffff2fc3),
+    color: Colors.white,
     child: Text("Send email", style:
     TextStyle(color:  Colors.blue,
-    fontSize: 20,fontWeight: FontWeight.bold,),),
+    fontSize: 23,fontWeight: FontWeight.bold,),),
     padding:  EdgeInsets.all(10),
               )
             )
-
           ],
         ),
         ),
-
       ),
       ),
     );
