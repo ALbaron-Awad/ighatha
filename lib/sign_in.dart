@@ -118,18 +118,28 @@ class _SignInState extends State<SignIn> {
             email = textValue;
           });
         },
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 3.0),
+        style: TextStyle(color: Colors.blue),
+        decoration:  InputDecoration(
+          labelText:  "Email",
+          labelStyle: TextStyle(
+              color: Colors.black45
           ),
-          hintText: "Enter email ",
-          hintStyle: TextStyle(color: Colors.black45,
-            fontSize: 20,
+          border:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.blue , width: 6.0),
           ),
-        ),
-        style: TextStyle(
-          color: Colors.blue,
-          fontSize: 25.4,
+          disabledBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.green),
+          ),
+          enabledBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.green),
+          ),
+          focusedBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.green),
+          ),
         ),
       ),
       SizedBox(height: 20.0,),
@@ -140,18 +150,28 @@ class _SignInState extends State<SignIn> {
           });
         },
         obscureText: true,
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 3.0),
+        style: TextStyle(color: Colors.blue),
+        decoration:  InputDecoration(
+          labelText:  "Password",
+          labelStyle: TextStyle(
+              color: Colors.black45
           ),
-          hintText: "Enter password ",
-          hintStyle: TextStyle(color: Colors.black45,
-            fontSize: 20,
+          border:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.blue , width: 6.0),
           ),
+          disabledBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.green),
+          ),
+          enabledBorder:OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.green),
+          ),
+          focusedBorder:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(color: Colors.green),
         ),
-        style: TextStyle(
-          color: Colors.blue,
-          fontSize: 25.4,
         ),
       ),
       //forget password

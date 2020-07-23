@@ -61,7 +61,6 @@ class _LoginState extends State<Login> {
             ],
           ),
         );
-
       }
     });
   }
@@ -80,7 +79,7 @@ class _LoginState extends State<Login> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 25.0,),
+            SizedBox(height: 15.0,),
             //email
             TextFormField(autovalidate: saveAttempted,
               onChanged: (textValue){
@@ -110,25 +109,31 @@ class _LoginState extends State<Login> {
                 }
                 return 'This is not a valid email';
               },
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 3.0),
+              style: TextStyle(color: Colors.blue),
+              decoration:  InputDecoration(
+                labelText:  "Email",
+                labelStyle: TextStyle(
+                    color: Colors.black45
                 ),
-
-                errorStyle: TextStyle(
-                  color: Colors.red,
+                border:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.blue , width: 6.0),
                 ),
-                hintText: "Enter email ",
-                hintStyle: TextStyle(color: Colors.black45,
-                  fontSize: 20,
+                disabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
                 ),
-              ),
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 25.4,
+                enabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                focusedBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
               ),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 15.0,),
             //pass
             TextFormField(autovalidate: saveAttempted,
               onChanged: (textValue){
@@ -146,25 +151,31 @@ class _LoginState extends State<Login> {
                 return null;
               },
               obscureText: true,
-
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 3.0),
+              style: TextStyle(color: Colors.blue),
+              decoration:  InputDecoration(
+                labelText:  "Password",
+                labelStyle: TextStyle(
+                    color: Colors.black45
                 ),
-                errorStyle: TextStyle(
-                  color: Colors.red,
+                border:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.blue , width: 6.0),
                 ),
-                hintText: "Enter password ",
-                hintStyle: TextStyle(color: Colors.black45,
-                  fontSize: 20,
+                disabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
                 ),
-              ),
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 25.4,
+                enabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                focusedBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
               ),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 15.0,),
             //pass conf
             TextFormField(
               autovalidate: saveAttempted,
@@ -185,24 +196,30 @@ class _LoginState extends State<Login> {
                 return null;
               },
               obscureText: true,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 3.0),
+              style: TextStyle(color: Colors.blue),
+              decoration:  InputDecoration(
+                labelText:  "Re-enter Password",
+                labelStyle: TextStyle(
+                    color: Colors.black45
                 ),
-                errorStyle: TextStyle(
-                  color: Colors.red,
+                border:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.blue , width: 6.0),
                 ),
-                hintText: "Re-enter password ",
-                hintStyle: TextStyle(color: Colors.black45,
-                  fontSize: 20,
+                disabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                enabledBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
+                ),
+                focusedBorder:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.green),
                 ),
               ),
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25.4,
-                )
             ),
-            SizedBox(height: 20.0,),
 
             SizedBox(height: 20.0,),
             Row(
