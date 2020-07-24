@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ighatha/HomeScreen.dart';
 import 'package:flutter/material.dart';
-
+/*
 class LoginScreen extends StatelessWidget {
   final _phoneController = TextEditingController();
   final _codeController = TextEditingController();
@@ -136,4 +136,4 @@ class LoginScreen extends StatelessWidget {
         )
     );
   }
-}
+}*/
