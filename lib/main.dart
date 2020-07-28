@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 import 'package:ighatha/auth/menu_frame.dart';
-import 'package:ighatha/OTP/authservice.dart';
+import 'package:location/location.dart';
 void main() {
-  runApp(MyApp());
+  runApp(MyHomePage());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,9 +15,56 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.white,
-
       ),
       home:MenuFrame(),
     );
 }
 }
+
+class MyHomePage extends StatefulWidget{
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+  }
+
+class _MyHomePageState  extends State<MyHomePage>{
+
+  bool _serviceEnabled;
+
+  @override
+  void initState() {
+
+    super.initState();
+    checkLocationServicesInDevice();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Gps most be on !',
+      theme: ThemeData(
+        primaryColor: Colors.white,
+      ),
+      home:MyApp(),
+    );
+  }
+
+   Future<void> checkLocationServicesInDevice()
+   async {
+      Location location = new Location();
+      _serviceEnabled =  await location.serviceEnabled();
+
+      if(_serviceEnabled) {
+        print("Gps on");
+      }else{
+        _serviceEnabled =  await location.requestService();
+        if(_serviceEnabled)
+          {
+            print("track on ");
+
+          }else{
+          SystemNavigator.pop();
+        }
+      }
+    }
+  }

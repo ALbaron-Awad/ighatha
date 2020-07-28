@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ighatha/auth/ForgetScreen.dart';
+import 'package:ighatha/home_widget.dart';
 class SignIn extends StatefulWidget {
 
   @override
   _SignInState createState() => _SignInState();
 }
-
 
 class _SignInState extends State<SignIn> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -16,12 +16,8 @@ class _SignInState extends State<SignIn> {
   void _signIn({String em , String pw}){
     _auth.signInWithEmailAndPassword(email: em, password: pw)
     .then((authResult){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return Container(
-          color: Colors.yellow,
-          child: Text('Welcome ${authResult.user.email}'),
-        );
-      }));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder:(BuildContext context)=> MyStatefulWidget()));
     }).catchError((err){
       print(err.code);
       if (err.code == 'ERROR_WRONG_PASSWORD') {

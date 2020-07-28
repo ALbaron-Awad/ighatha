@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'ForgetScreen.dart';
+import 'package:ighatha/home_widget.dart';
 class Login extends StatefulWidget {
 
   final Function cancelBackToHome;
@@ -28,7 +29,7 @@ class _LoginState extends State<Login> {
         .createUserWithEmailAndPassword(email: email, password: pw).then((authResult)
     {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder:(BuildContext context)=> ForgetScreen()));
+          MaterialPageRoute(builder:(BuildContext context)=> MyStatefulWidget()));
 
     }
     ).catchError((err){
