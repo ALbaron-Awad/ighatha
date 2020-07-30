@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
         .createUserWithEmailAndPassword(email: email, password: pw).then((authResult)
     {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder:(BuildContext context)=> MyStatefulWidget()));
+          MaterialPageRoute(builder:(BuildContext context)=> MyHomePage()));
 
     }
     ).catchError((err){

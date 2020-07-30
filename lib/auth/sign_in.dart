@@ -17,7 +17,7 @@ class _SignInState extends State<SignIn> {
     _auth.signInWithEmailAndPassword(email: em, password: pw)
     .then((authResult){
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder:(BuildContext context)=> MyStatefulWidget()));
+          MaterialPageRoute(builder:(BuildContext context)=> MyHomePage()));
     }).catchError((err){
       print(err.code);
       if (err.code == 'ERROR_WRONG_PASSWORD') {
