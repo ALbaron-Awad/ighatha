@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:ighatha/auth/menu_frame.dart';
 import 'package:location/location.dart';
 void main() {
-  runApp(MyHomePage());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     );
 }
 }
-
+/*
 class MyHomePage extends StatefulWidget{
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -60,7 +60,7 @@ class _MyHomePageState  extends State<MyHomePage>{
         _serviceEnabled =  await location.requestService();
         if(_serviceEnabled)
           {
-            print("track on ");
+            print("GPS is on now");
 
           }else{
           SystemNavigator.pop();
@@ -68,3 +68,4 @@ class _MyHomePageState  extends State<MyHomePage>{
       }
     }
   }
+*/
