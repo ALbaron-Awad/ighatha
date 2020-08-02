@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ighatha/home_widget.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
@@ -5,29 +7,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:ighatha/constants.dart';
 import 'package:ighatha/profile_list_item.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart';
 
 
-
-class Profile extends StatelessWidget {
-  // This widget is the root of your application.
+class Profile extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return ThemeProvider(
-      initTheme: kDarkTheme,
-      child: Builder(
-        builder: (context) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeProvider.of(context),
-            home: _Profile(),
-          );
-        },
-      ),
-    );
-  }
+  _Profile createState() => _Profile();
 }
 
-class _Profile extends StatelessWidget {
+class _Profile extends State<Profile> {
+
+  final CollectionReference UserInfo = Firestore.instance.collection('user');
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, height: 896, width: 414, allowFontScaling: true);
@@ -174,7 +166,7 @@ class _Profile extends StatelessWidget {
                       ProfileListItem(
                         icon: LineAwesomeIcons.alternate_sign_out,
                         text: 'Logout',
-                        hasNavigation: false,
+                        hasNavigation: true,
                       ),
                     ],
                   ),
