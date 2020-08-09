@@ -13,6 +13,8 @@ class _ForgetScreen  extends State<ForgetScreen>{
   String email;
   var _formKey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  // ignore: non_constant_identifier_names
   void _ForgetPassword({String email}) {
     _auth.sendPasswordResetEmail(email: email)
         .then((value) {
@@ -20,7 +22,7 @@ class _ForgetScreen  extends State<ForgetScreen>{
         context: context,
         builder: (context) => new AlertDialog(
           title: new Text('Password Reset'),
-          content: Text('A link to reset your password has been sent to  ${email}'),
+          content: Text('A link to reset your password has been sent to  $email'),
           contentTextStyle: TextStyle(
             color: Colors.black,
             fontSize: 15.4,
